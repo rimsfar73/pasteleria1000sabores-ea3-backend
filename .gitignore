@@ -5,3 +5,6 @@ pasteleria-h2.trace.db
 .keys/
 .env
 *.log
+
+# IntelliJ IDEA
+.idea/
