@@ -28,6 +28,7 @@ app:
   key-directory: ${JWT_KEY_DIRECTORY:.keys}
   seed-demo: ${SEED_DEMO:false}
   admin-password: ${ADMIN_PASSWORD:}
+  bootstrap-admin: ${BOOTSTRAP_ADMIN:false}
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
