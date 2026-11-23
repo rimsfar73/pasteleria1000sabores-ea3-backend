@@ -1,0 +1,7 @@
+# Activar con SPRING_PROFILES_ACTIVE=prod detrás de un proxy HTTPS.
+# No reutilizar cuentas ni claves de la demostración local.
+app:
+  seed-demo: false
+  cookie-secure: true
+  origin: ${FRONTEND_ORIGIN}
+  key-directory: ${JWT_KEY_DIRECTORY}

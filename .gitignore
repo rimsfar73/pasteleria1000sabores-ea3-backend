@@ -1,0 +1,7 @@
+target/
+pasteleria-h2.mv.db
+pasteleria-h2.trace.db
+
+.keys/
+.env
+*.log
