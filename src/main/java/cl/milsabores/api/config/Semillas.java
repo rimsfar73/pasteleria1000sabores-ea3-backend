@@ -33,6 +33,9 @@ public class Semillas implements CommandLineRunner {
   @Value("${app.admin-password}")
   String clave;
 
+  @Value("${app.bootstrap-admin:false}")
+  boolean bootstrapAdmin;
+
   public Semillas(
       CategoriaRepository c,
       ProductoRepository p,
@@ -69,7 +72,7 @@ public class Semillas implements CommandLineRunner {
           p.descripcion = d.descripcion();
           p.categoria = c;
           p.precio = d.precio();
-          p.stock = demo ? d.stock() : 0;
+          p.stock = demo ? d.stock() : 1;
           p.imagen = d.imagen();
           p.disponible = d.disponible();
           p.personalizable = d.personalizable();
@@ -80,16 +83,24 @@ public class Semillas implements CommandLineRunner {
         }
       }
     }
-    if (usuarios.count() == 0) {
-      if (clave.length() < 12)
+    // Los datos de demostración se crean solo en una base sin usuarios.
+    if (demo && usuarios.count() == 0) {
+      if (clave == null || clave.length() < 12)
         throw new IllegalStateException(
-            "Define ADMIN_PASSWORD con al menos 12 caracteres para crear el administrador"
-                + " inicial.");
+            "Define ADMIN_PASSWORD con al menos 12 caracteres para inicializar usuarios.");
+
       crear("admin@pasteleria.cl", "admin", "111111111", clave);
-      if (demo) {
-        crear("cliente@gmail.com", "cliente", "222222228", clave);
-        crear("vendedor@gmail.com", "vendedor", "333333335", clave);
-      }
+      crear("cliente@gmail.com", "cliente", "222222228", clave);
+      crear("vendedor@gmail.com", "vendedor", "333333335", clave);
+    }
+
+    // Recuperación controlada del administrador sin modificar clientes existentes.
+    if (bootstrapAdmin && usuarios.findByCorreo("admin@pasteleria.cl").isEmpty()) {
+      if (clave == null || clave.length() < 12)
+        throw new IllegalStateException(
+            "Define ADMIN_PASSWORD con al menos 12 caracteres para crear el administrador.");
+
+      crear("admin@pasteleria.cl", "admin", "111111111", clave);
     }
     for (String[] d :
         new String[][] {
