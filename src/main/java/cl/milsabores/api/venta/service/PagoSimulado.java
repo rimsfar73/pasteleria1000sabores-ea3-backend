@@ -1,5 +1,7 @@
 package cl.milsabores.api.venta.service;
 
+import cl.milsabores.api.common.exception.ApiException;
+
 /** Validación académica; no ejecuta pagos ni representa una pasarela real. */
 public final class PagoSimulado {
   private PagoSimulado() {}

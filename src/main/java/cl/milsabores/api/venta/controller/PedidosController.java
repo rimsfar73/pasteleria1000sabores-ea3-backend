@@ -1,5 +1,8 @@
 package cl.milsabores.api.venta.controller;
 
+import cl.milsabores.api.dtos.Dtos;
+import cl.milsabores.api.venta.service.PedidosService;
+
 import jakarta.validation.Valid;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;

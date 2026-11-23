@@ -1,5 +1,12 @@
 package cl.milsabores.api.auth.service;
 
+import cl.milsabores.api.common.exception.ApiException;
+import cl.milsabores.api.dtos.Dtos;
+import cl.milsabores.api.usuario.entity.SesionRefresh;
+import cl.milsabores.api.usuario.repository.SesionRefreshRepository;
+import cl.milsabores.api.usuario.entity.Usuario;
+import cl.milsabores.api.usuario.repository.UsuarioRepository;
+
 import java.nio.charset.StandardCharsets;
 import java.security.*;
 import java.time.*;
@@ -90,7 +97,7 @@ public class AuthService {
         refresh);
   }
 
-  static String hash(String value) {
+  public static String hash(String value) {
     try {
       return HexFormat.of()
           .formatHex(

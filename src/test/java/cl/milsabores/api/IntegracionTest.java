@@ -1,5 +1,10 @@
 package cl.milsabores.api;
 
+import cl.milsabores.api.catalogo.repository.ProductoRepository;
+import cl.milsabores.api.usuario.repository.UsuarioRepository;
+import cl.milsabores.api.venta.repository.PedidoRepository;
+import cl.milsabores.api.usuario.service.UsuariosService;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;

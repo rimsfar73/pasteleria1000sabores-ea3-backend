@@ -1,7 +1,7 @@
 # Las pruebas nunca usan DB_URL: requieren su propia base de datos.
 spring:
   datasource:
-    url: ${TEST_DB_URL:jdbc:postgresql://localhost:55432/pasteleria_test}
+    url: ${TEST_DB_URL:jdbc:postgresql://localhost:5432/pasteleria_test}
     username: ${TEST_DB_USER:pasteleria}
     password: ${TEST_DB_PASSWORD:prueba-local}
 app:

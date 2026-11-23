@@ -1,5 +1,6 @@
 package cl.milsabores.api.common;
 
+import cl.milsabores.api.dtos.Dtos;
 import jakarta.validation.Valid;
 import java.util.*;
 import org.springframework.security.access.prepost.PreAuthorize;

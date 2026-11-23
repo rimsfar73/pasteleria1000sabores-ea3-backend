@@ -1,5 +1,13 @@
 package cl.milsabores.api.catalogo.controller;
 
+import cl.milsabores.api.common.exception.ApiException;
+import cl.milsabores.api.catalogo.service.CatalogoService;
+import cl.milsabores.api.catalogo.entity.Categoria;
+import cl.milsabores.api.catalogo.repository.CategoriaRepository;
+import cl.milsabores.api.dtos.Dtos;
+import cl.milsabores.api.catalogo.repository.ProductoRepository;
+import cl.milsabores.api.common.Ubicaciones;
+
 import jakarta.validation.Valid;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;

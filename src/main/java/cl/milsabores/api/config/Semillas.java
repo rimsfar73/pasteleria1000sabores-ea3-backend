@@ -1,5 +1,15 @@
 package cl.milsabores.api.config;
 
+import cl.milsabores.api.catalogo.entity.Categoria;
+import cl.milsabores.api.catalogo.repository.CategoriaRepository;
+import cl.milsabores.api.descuento.Cupon;
+import cl.milsabores.api.descuento.CuponRepository;
+import cl.milsabores.api.dtos.Dtos;
+import cl.milsabores.api.catalogo.entity.Producto;
+import cl.milsabores.api.catalogo.repository.ProductoRepository;
+import cl.milsabores.api.usuario.entity.Usuario;
+import cl.milsabores.api.usuario.repository.UsuarioRepository;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.*;
 import org.springframework.beans.factory.annotation.Value;

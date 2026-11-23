@@ -1,5 +1,9 @@
 package cl.milsabores.api.usuario.controller;
 
+import cl.milsabores.api.dtos.Dtos;
+import cl.milsabores.api.usuario.repository.UsuarioRepository;
+import cl.milsabores.api.usuario.service.UsuariosService;
+
 import jakarta.validation.Valid;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;

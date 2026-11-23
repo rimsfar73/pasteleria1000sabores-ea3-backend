@@ -1,5 +1,7 @@
 package cl.milsabores.api.usuario.repository;
 
+import cl.milsabores.api.usuario.entity.Usuario;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, String> {

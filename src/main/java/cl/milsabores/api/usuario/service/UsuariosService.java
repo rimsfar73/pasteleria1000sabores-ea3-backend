@@ -1,5 +1,12 @@
 package cl.milsabores.api.usuario.service;
 
+import cl.milsabores.api.common.exception.ApiException;
+import cl.milsabores.api.dtos.Dtos;
+import cl.milsabores.api.usuario.repository.SesionRefreshRepository;
+import cl.milsabores.api.common.Ubicaciones;
+import cl.milsabores.api.usuario.entity.Usuario;
+import cl.milsabores.api.usuario.repository.UsuarioRepository;
+
 import java.util.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -94,7 +101,7 @@ public class UsuariosService {
     u.tokenVersion++;
   }
 
-  static boolean runValido(String run) {
+  public static boolean runValido(String run) {
     if (!run.matches("[0-9]{6,8}[0-9K]")) return false;
     int suma = 0, factor = 2;
     for (int i = run.length() - 2; i >= 0; i--) {

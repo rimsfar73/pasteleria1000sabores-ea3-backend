@@ -1,5 +1,7 @@
 package cl.milsabores.api.venta.repository;
 
+import cl.milsabores.api.venta.entity.Pedido;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PedidoRepository extends JpaRepository<Pedido, String> {

@@ -1,5 +1,13 @@
 package cl.milsabores.api.catalogo.service;
 
+import cl.milsabores.api.common.exception.ApiException;
+import cl.milsabores.api.catalogo.repository.CategoriaRepository;
+import cl.milsabores.api.dtos.Dtos;
+import cl.milsabores.api.catalogo.entity.Producto;
+import cl.milsabores.api.catalogo.entity.ProductoPrecioHist;
+import cl.milsabores.api.catalogo.repository.ProductoPrecioHistRepository;
+import cl.milsabores.api.catalogo.repository.ProductoRepository;
+
 import java.util.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

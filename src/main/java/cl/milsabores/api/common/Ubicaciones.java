@@ -1,5 +1,7 @@
 package cl.milsabores.api.common;
 
+import cl.milsabores.api.common.exception.ApiException;
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.*;

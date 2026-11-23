@@ -1,5 +1,7 @@
 package cl.milsabores.api.config;
 
+import cl.milsabores.api.common.exception.ApiException;
+
 import java.math.BigDecimal;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

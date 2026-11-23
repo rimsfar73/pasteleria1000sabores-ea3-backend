@@ -1,5 +1,7 @@
 package cl.milsabores.api.venta.entity;
 
+import cl.milsabores.api.usuario.entity.Usuario;
+
 import jakarta.persistence.*;
 
 @Entity

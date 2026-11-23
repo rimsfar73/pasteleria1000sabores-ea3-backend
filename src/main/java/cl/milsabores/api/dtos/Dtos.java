@@ -1,4 +1,7 @@
-package cl.milsabores.api.common;
+package cl.milsabores.api.dtos;
+
+import cl.milsabores.api.catalogo.entity.Producto;
+import cl.milsabores.api.usuario.entity.Usuario;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;

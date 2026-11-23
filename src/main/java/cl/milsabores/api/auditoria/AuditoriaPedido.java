@@ -1,5 +1,7 @@
 package cl.milsabores.api.auditoria;
 
+import cl.milsabores.api.venta.entity.Pedido;
+
 import jakarta.persistence.*;
 import java.time.Instant;
 

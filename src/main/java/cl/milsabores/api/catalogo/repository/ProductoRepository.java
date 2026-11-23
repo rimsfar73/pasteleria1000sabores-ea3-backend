@@ -1,5 +1,7 @@
 package cl.milsabores.api.catalogo.repository;
 
+import cl.milsabores.api.catalogo.entity.Producto;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ProductoRepository extends JpaRepository<Producto, String> {
