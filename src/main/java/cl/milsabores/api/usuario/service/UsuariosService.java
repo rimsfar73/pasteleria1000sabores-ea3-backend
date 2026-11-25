@@ -37,9 +37,9 @@ public class UsuariosService {
     boolean nuevo = id == null;
     if (nuevo) u.id = UUID.randomUUID().toString();
     String run = d.run().trim().toUpperCase(), correo = d.correo().trim().toLowerCase();
-    if (!nuevo && !admin && !run.equals(u.run))
-      throw new ApiException(400, "El RUN no puede cambiar desde el perfil.");
-    if (!runValido(run))
+    if (!nuevo && !run.equals(u.run))
+      throw new ApiException(400, "El RUN no puede cambiar una vez registrada la cuenta.");
+    if (nuevo && !runValido(run))
       throw new ApiException(400, "RUN inválido: usa dígito verificador, sin puntos ni guion.");
     if (!correo.matches("[^\s@]+@(gmail[.]com|duoc[.]cl|profesor[.]duoc[.]cl)")
         && !(!nuevo && correo.equals(u.correo) && correo.endsWith("@pasteleria.cl")))
@@ -56,6 +56,8 @@ public class UsuariosService {
         && repo.bloquearAdministradores().size() <= 1)
       throw new ApiException(409, "Debe permanecer al menos un administrador activo.");
     boolean cambiaClave = d.clave() != null && !d.clave().isEmpty();
+    if (admin && !nuevo && cambiaClave)
+      throw new ApiException(403, "No se permite cambiar contraseñas desde la administración de usuarios.");
     if (!nuevo && (cambiaClave || !u.rol.equals(rol)))
       sesiones.findByUsuarioId(u.id).forEach(s -> s.revocada = true);
     if (nuevo || cambiaClave) {
